@@ -66,7 +66,7 @@
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
                     android:paddingTop="10dp"
-                    android:text="HDD">
+                    android:text="HDD - (GB)">
 
                 </TextView>
 
@@ -76,6 +76,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:stepSize="500"
+                    android:valueFrom="0"
+                    android:valueTo="3000"
                     app:thumbColor="@color/orangeLite"
                     app:thumbHeight="50dp"
                     app:thumbWidth="15dp"
@@ -126,6 +129,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:stepSize="2"
+                    android:valueFrom="0"
+                    android:valueTo="64"
                     app:thumbColor="@color/orangeLite"
                     app:thumbHeight="50dp"
                     app:thumbWidth="15dp"
@@ -175,6 +181,7 @@
                     android:orientation="horizontal">
 
                     <ImageButton
+                        android:id="@+id/btnGabinte01"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
                         android:backgroundTint="@color/orangeLite"
@@ -184,6 +191,7 @@
                     </ImageButton>
 
                     <ImageButton
+                        android:id="@+id/btnGabinte02"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
                         android:backgroundTint="@color/orangeLite"
@@ -239,6 +247,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/btnProcesador01"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:backgroundTint="@color/orangeLite"
@@ -248,6 +257,7 @@
                 </ImageButton>
 
                 <ImageButton
+                    android:id="@+id/btnProcesador02"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:backgroundTint="@color/orangeLite"
@@ -267,6 +277,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/btnProcesador03"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:backgroundTint="@color/orangeLite"
@@ -276,6 +287,7 @@
                 </ImageButton>
 
                 <ImageButton
+                    android:id="@+id/btnProcesador04"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:backgroundTint="@color/orangeLite"
@@ -301,34 +313,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="40dp"
+                android:gravity="center"
                 android:text="RTX 4090"
                 android:textColor="@color/black"
                 android:textSize="8dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="40dp"
+                android:gravity="center"
                 android:text="RX 7900 XTX"
                 android:textColor="@color/black"
                 android:textSize="8dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="29dp"
                 android:layout_marginBottom="40dp"
                 android:gravity="center"
                 android:text="RTX 4080"
@@ -336,11 +345,10 @@
                 android:textSize="8dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="40dp"
+                android:gravity="center"
                 android:text="RX 7900 XT"
                 android:textColor="@color/black"
                 android:textSize="8dp" />
@@ -356,6 +364,7 @@
 
 
             <ImageButton
+                android:id="@+id/btnGrafica01"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:backgroundTint="@color/orangeLite"
@@ -365,6 +374,7 @@
             </ImageButton>
 
             <ImageButton
+                android:id="@+id/btnGrafica02"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:backgroundTint="@color/orangeLite"
@@ -374,35 +384,33 @@
             </ImageButton>
 
             <ImageButton
+                android:id="@+id/btnGrafica03"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:backgroundTint="@color/orangeLite"
                 android:scaleType="centerInside"
-                android:src="@drawable/grafica03">
-
-            </ImageButton>
+                android:src="@drawable/grafica03"></ImageButton>
 
             <ImageButton
+                android:id="@+id/btnGrafica04"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:backgroundTint="@color/orangeLite"
                 android:scaleType="centerInside"
-                android:src="@drawable/grafica04">
-
-            </ImageButton>
-
-
+                android:src="@drawable/grafica04"></ImageButton>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvTotal"
+
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="250dp"
         android:layout_margin="10dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintTop_toBottomOf="@+id/cvGrafica">
+
 
     </androidx.cardview.widget.CardView>
 
