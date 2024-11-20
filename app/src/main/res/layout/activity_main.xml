@@ -65,8 +65,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
-                    android:text="HDD"
-                    android:paddingTop="10dp">
+                    android:paddingTop="10dp"
+                    android:text="HDD">
 
                 </TextView>
 
@@ -115,8 +115,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
-                    android:text="Ram"
-                    android:paddingTop="10dp">
+                    android:paddingTop="10dp"
+                    android:text="Ram">
 
                 </TextView>
 
@@ -148,7 +148,7 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="108dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -161,6 +161,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     android:gravity="center"
                     android:text="Gabinete"
                     android:textColor="@color/black"
@@ -173,74 +174,24 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                    <ImageButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:backgroundTint="@color/orangeLite"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/gabinete01">
 
-                        <!-- Imagen -->
-                        <ImageView
-                            android:id="@+id/imgGabinete01"
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/gabinete01"
-                            android:scaleType="centerInside"
-                            android:contentDescription="Gabinete" />
+                    </ImageButton>
 
-                        <!-- Botón flotante encima -->
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/btnGabinete01"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/transparent" />
-                    </FrameLayout>
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                    <ImageButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:backgroundTint="@color/orangeLite"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/gabinete02">
 
+                    </ImageButton>
 
-                        <ImageView
-                            android:id="@+id/imgGabinete02"
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/gabinete02"
-                            android:scaleType="centerInside"
-                            android:contentDescription="Gabinete" />
-
-                        <!-- Botón flotante encima -->
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/btnGabinete02"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/transparent" />
-                    </FrameLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btnCPU03"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="10dp"
-                        android:backgroundTint="@color/orange">
-
-                    </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btnCPU04"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/orange">
-
-                    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
                 </LinearLayout>
 
@@ -256,9 +207,9 @@
         android:layout_marginTop="10dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
-        app:layout_constraintTop_toBottomOf="@id/cvRam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cvGabinete"
+        app:layout_constraintTop_toBottomOf="@id/cvRam"
         tools:layout_editor_absoluteX="10dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -287,20 +238,23 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnProcesador01"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
-                    android:backgroundTint="@color/orange"
-                    />
+                <ImageButton
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:backgroundTint="@color/orangeLite"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/procesador01">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnProcesador02"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/orange"
-                    />
+                </ImageButton>
+
+                <ImageButton
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:backgroundTint="@color/orangeLite"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/procesador02">
+
+                </ImageButton>
 
 
             </LinearLayout>
@@ -309,25 +263,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnProcesador03"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="10dp"
-                    android:backgroundTint="@color/orange">
+                <ImageButton
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:backgroundTint="@color/orangeLite"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/procesador03">
 
-                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+                </ImageButton>
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnProcesador04"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/orange">
+                <ImageButton
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:backgroundTint="@color/orangeLite"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/procesador04">
 
-                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+                </ImageButton>
 
             </LinearLayout>
 
@@ -338,7 +293,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGrafica"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_height="100dp"
         android:layout_margin="10dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintTop_toBottomOf="@+id/cvGabinete">
@@ -349,44 +304,107 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/orange">
+                android:layout_marginBottom="40dp"
+                android:text="RTX 4090"
+                android:textColor="@color/black"
+                android:textSize="8dp" />
 
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/orange"
-                >
+                android:layout_marginBottom="40dp"
+                android:text="RX 7900 XTX"
+                android:textColor="@color/black"
+                android:textSize="8dp" />
 
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/orange"
-                >
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="29dp"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:text="RTX 4080"
+                android:textColor="@color/black"
+                android:textSize="8dp" />
 
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/orange"
-                >
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+                android:layout_marginBottom="40dp"
+                android:text="RX 7900 XT"
+                android:textColor="@color/black"
+                android:textSize="8dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orangeLite"
+                android:scaleType="centerInside"
+                android:src="@drawable/grafica01">
+
+            </ImageButton>
+
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orangeLite"
+                android:scaleType="centerInside"
+                android:src="@drawable/grafica02">
+
+            </ImageButton>
+
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orangeLite"
+                android:scaleType="centerInside"
+                android:src="@drawable/grafica03">
+
+            </ImageButton>
+
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orangeLite"
+                android:scaleType="centerInside"
+                android:src="@drawable/grafica04">
+
+            </ImageButton>
+
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTotal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvGrafica">
 
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
