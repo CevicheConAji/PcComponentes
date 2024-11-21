@@ -1,8 +1,10 @@
 package com.example.pccomponentes
 
 import android.os.Bundle
-import android.widget.Button
+import android.util.Log
+
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,6 +15,11 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var rsHdd:RangeSlider
     lateinit var rsRam:RangeSlider
+    var valueHdd:Float = 0f
+    var valueRam:Float = 0f
+
+    var HDD_PRECIO:Float = 0.04f
+    var RAM_PRECIO:Float = 2.625f
 
     lateinit var btnGabinete01:ImageButton
     lateinit var btnGabinete02:ImageButton
@@ -27,6 +34,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnGrafica03:ImageButton
     lateinit var btnGrafica04:ImageButton
 
+    lateinit var tvTotal:TextView
+    lateinit var tvHdd:TextView
+    lateinit var tvRam:TextView
+    lateinit var tvGabinete:TextView
+    lateinit var tvProcesador:TextView
+    lateinit var tvGrafica:TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,8 +48,7 @@ class MainActivity : AppCompatActivity() {
 
 
         initComponet()
-
-
+        onClick()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -59,6 +72,38 @@ class MainActivity : AppCompatActivity() {
         btnGrafica02 = findViewById(R.id.btnGrafica02)
         btnGrafica03 = findViewById(R.id.btnGrafica03)
         btnGrafica04 = findViewById(R.id.btnGrafica04)
+
+        tvTotal = findViewById(R.id.tvTotal)
+        tvHdd = findViewById(R.id.tvHdd)
+        tvRam = findViewById(R.id.tvRam)
+        tvGabinete = findViewById(R.id.tvGabinete)
+        tvProcesador = findViewById(R.id.tvProcesador)
+        tvGrafica = findViewById(R.id.tvGrafica)
     }
+
+    private fun onClick(){
+        rsHdd.addOnChangeListener { slider, value, fromUser ->
+            valueHdd = value
+            //0.14
+            Log.i("Cambio",valueHdd.toString())
+            sumaTotal()
+        }
+        rsRam.addOnChangeListener { slider, value, fromUser ->
+            valueRam = value
+            //2.63
+            Log.i("Cambio",valueRam.toString())
+            sumaTotal()
+        }
+        btnGrafica01.setOnClickListener(){
+
+        }
+    }
+    private fun sumaTotal(){
+        tvTotal.text = ((valueHdd*HDD_PRECIO)+(valueRam*RAM_PRECIO)).toString()+"€"
+        tvHdd.text = "HDD = "+(valueHdd*HDD_PRECIO).toString()+"€ ("+valueHdd.toInt()+"GB)"
+        tvRam.text = "RAM = "+(valueRam*RAM_PRECIO).toString()+"€("+valueRam.toInt()+"GB)"
+
+    }
+
 
 }
