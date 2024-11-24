@@ -1,5 +1,6 @@
 package com.example.pccomponentes
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 
@@ -9,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import com.google.android.material.slider.RangeSlider
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,15 @@ class MainActivity : AppCompatActivity() {
 
     var HDD_PRECIO:Float = 0.04f
     var RAM_PRECIO:Float = 2.625f
+
+    var gabineteOption:String = " "
+    var valueGabinete:Float = 0f
+
+    var procesadorOption:String = " "
+    var valueProcesador:Float = 0f
+
+    var graficaOption:String = " "
+    var valueGrafica:Float = 0f
 
     lateinit var btnGabinete01:ImageButton
     lateinit var btnGabinete02:ImageButton
@@ -84,26 +95,75 @@ class MainActivity : AppCompatActivity() {
     private fun onClick(){
         rsHdd.addOnChangeListener { slider, value, fromUser ->
             valueHdd = value
-            //0.14
             Log.i("Cambio",valueHdd.toString())
             sumaTotal()
         }
         rsRam.addOnChangeListener { slider, value, fromUser ->
             valueRam = value
-            //2.63
             Log.i("Cambio",valueRam.toString())
             sumaTotal()
         }
-        btnGrafica01.setOnClickListener(){
-
+        btnGabinete01.setOnClickListener(){
+            gabineteOption = "Rainbow"
+            valueGabinete = 90f
+            sumaTotal()
         }
+        btnGabinete02.setOnClickListener(){
+            gabineteOption = "Negro"
+            valueGabinete = 120f
+            sumaTotal()
+        }
+        btnProcesador01.setOnClickListener(){
+            procesadorOption = "i3 10th"
+            valueProcesador = 100f
+            sumaTotal()
+        }
+        btnProcesador02.setOnClickListener(){
+            procesadorOption = "i5 10th"
+            valueProcesador = 120f
+            sumaTotal()
+        }
+        btnProcesador03.setOnClickListener(){
+            procesadorOption = "i7 10th"
+            valueProcesador = 150f
+            sumaTotal()
+        }
+        btnProcesador04.setOnClickListener(){
+            procesadorOption = "i9 10th"
+            valueProcesador = 190f
+            sumaTotal()
+        }
+        btnGrafica01.setOnClickListener(){
+            graficaOption = "RTX 4090"
+            valueGrafica = 200f
+            sumaTotal()
+        }
+        btnGrafica02.setOnClickListener(){
+            graficaOption = "RX 7900 XTX"
+            valueGrafica = 275f
+            sumaTotal()
+        }
+        btnGrafica03.setOnClickListener(){
+            graficaOption = "RTX 4080"
+            valueGrafica = 425f
+            sumaTotal()
+        }
+        btnGrafica04.setOnClickListener(){
+            graficaOption = "RX 7900 XT"
+            valueGrafica = 500f
+            sumaTotal()
+        }
+
     }
     private fun sumaTotal(){
-        tvTotal.text = ((valueHdd*HDD_PRECIO)+(valueRam*RAM_PRECIO)).toString()+"€"
-        tvHdd.text = "HDD = "+(valueHdd*HDD_PRECIO).toString()+"€ ("+valueHdd.toInt()+"GB)"
-        tvRam.text = "RAM = "+(valueRam*RAM_PRECIO).toString()+"€("+valueRam.toInt()+"GB)"
-
+        tvTotal.text = ((valueHdd*HDD_PRECIO)+(valueRam*RAM_PRECIO)+(valueGabinete)+(valueProcesador)+(valueGrafica)).toString()+"€"
+        tvHdd.text = "HDD = "+"("+valueHdd.toInt()+"GB) "+(valueHdd*HDD_PRECIO).toString()+"€"
+        tvRam.text = "RAM = "+"("+valueRam.toInt()+"GB) "+(valueRam*RAM_PRECIO).toString()+"€"
+        tvGabinete.text = "Gabinete = "+gabineteOption + " "+ valueGabinete+"€"
+        tvProcesador.text = "Procesador = "+procesadorOption+" "+valueProcesador+"€"
+        tvGrafica.text = "Grafica = "+graficaOption+" "+valueGrafica+"€"
     }
+
 
 
 }
